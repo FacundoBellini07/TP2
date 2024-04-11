@@ -9,27 +9,27 @@ int main() {
     int i, j, k;
     int longitudmaxima = 0;
     int longitud;
-
     printf("Ingresa cinco palabras:\n");
     for (i = 0; i < 5; i++) {
         scanf("%s", palabras[i]);
     }
-
     strcpy(subcadena, palabras[0]);
     longitud = strlen(subcadena);
 
-    for (i = 0; i < 5; i++) {
-        for (j = 0; j < longitud; j++) {
-            for (k = 0; palabras[i][k] != '\0' && subcadena[k] != '\0' && palabras[i][k] == subcadena[k]; k++);
-            if (k > longitudmaxima) {
+    for (j = 0; j < longitud; j++) {
+        for (i = 1; i < 5; i++) {
+            for (k = 0; palabras[i][k] != '\0' && subcadena[j + k] != '\0' && palabras[i][k] == subcadena[j + k]; k++);
+            if (k < longitudmaxima) {
                 longitudmaxima = k;
-                strncpy(subcadena, palabras[i] + j, longitudmaxima);
+                break;
             }
         }
-        longitud = longitudmaxima;
-        longitudmaxima = 0;
+        if (k > longitudmaxima) {
+            longitudmaxima = k;
+            strncpy(subcadena, palabras[0] + j, longitudmaxima);
+            subcadena[longitudmaxima] = '\0';
+        }
     }
-
     printf("La subcadena comun mas larga es: %s\n", subcadena);
 
     return 0;
