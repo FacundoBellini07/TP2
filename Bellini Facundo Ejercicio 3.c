@@ -1,5 +1,5 @@
 /*Realiza un programa que determine si una cadena de caracteres ingresada
-por el usuario es palíndromo (se lee igual de izquierda a derecha que de
+por el usuario es palÃ­ndromo (se lee igual de izquierda a derecha que de
 derecha a izquierda).*/
 #include <stdio.h>
 #include <string.h>
@@ -10,7 +10,7 @@ int main(){
 	printf("Ingrese una palabra\n");
 	scanf("%s", palabra);
 	int i;
-	int contador;
+	int contador = 0;
 	int longitud = strlen(palabra);
 	for(i = longitud - 1; i >= 0; i--){
 		revez[contador] = palabra[i];
