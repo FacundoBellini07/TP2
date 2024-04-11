@@ -16,7 +16,6 @@ int main(){
 		revez[contador] = palabra[i];
 		contador++;
 }
-	printf("%s", revez);
 	for(i = 0; i < longitud; i++){
 		if(revez[i] != palabra[i]){
 			printf("\nLa palabra no es palindroma\n");
